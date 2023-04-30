@@ -1,1 +1,0 @@
-# Iniciando o desafio Karhub
