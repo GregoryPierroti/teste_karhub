@@ -16,14 +16,30 @@ Instale as dependências necessárias com o seguinte comando: pip install -r req
 ## Estrutura do projeto
 O projeto é composto pelas seguintes pastas e arquivos:
 
+karhub_project/
+├── venv/
+├── source/
+│   ├── karhub_autoparts_1.xlsx
+│   └── Karhub-alias.csv
+├── functions/
+│   ├── bigquery.py
+│   ├── connect_api.py
+|   ├── df_alias.py
+|   ├── df_produtos.py
+|   ├── df_veiculos.py
+├── requirements.txt
+├── README.md
+├── df_final.ipynb
+└── query.ipynb
+
 - venv: ambiente virtual Python criado para armazenar os recursos de biblioteca para facilitar o funcionamento do projeto.
 - source: pasta na qual se encontram os arquivos csv e xlsx que serão consumidos, além das credenciais de acesso ao Big Query que não serão incluídas no GitHub para proteger os dados.
 - functions: pasta na qual se encontram os arquivos Python que auxiliam na formação do dataframe final.
-- bigquery.py: arquivo que contém a função credencial_bq() para credenciar os acessos ao Big Query com base no arquivo credential.py da pasta source, e a função write_bigquery() para estabelecer os parâmetros da tabela que será escrita no Big Query. É importante destacar que não é possível fazer replace no banco de dados com os acessos atuais, portanto é necessário mudar o nome do table_id caso seja necessário testar a escrita.
+1. bigquery.py: arquivo que contém a função credencial_bq() para credenciar os acessos ao Big Query com base no arquivo credential.py da pasta source, e a função write_bigquery() para estabelecer os parâmetros da tabela que será escrita no Big Query. É importante destacar que não é possível fazer replace no banco de dados com os acessos atuais, portanto é necessário mudar o nome do table_id caso seja necessário testar a escrita.
 connect_api.py: arquivo que contém a função consumir_api() para fazer acesso ao token e a função gerar_dados_veiculos() para retornar os resultados utilizando o token.
-- df_alias.py: arquivo que contém a função ler_dataframe_alias() para ler um dataframe da tabela 'DE/PARA'.
-- df_veiculos.py: arquivo que contém funções que realizam os tratamentos solicitados no desafio, incluindo a função tratar_dados_veiculos() que realiza as outras funções de forma organizada.
-- df_produtos.py: arquivo que contém funções que realizam os tratamentos necessários nos dados do dataframe de produtos. A função tratar_dataframe_produtos() executa as outras funções na ordem necessária.
+2. df_alias.py: arquivo que contém a função ler_dataframe_alias() para ler um dataframe da tabela 'DE/PARA'.
+3. df_veiculos.py: arquivo que contém funções que realizam os tratamentos solicitados no desafio, incluindo a função tratar_dados_veiculos() que realiza as outras funções de forma organizada.
+4. df_produtos.py: arquivo que contém funções que realizam os tratamentos necessários nos dados do dataframe de produtos. A função tratar_dataframe_produtos() executa as outras funções na ordem necessária.
 - df_final.ipynb: arquivo de Jupyter Notebook que centraliza e executa os módulos Python da pasta functions para trazer os dados e realizar as principais ações e ajustes finais para salvar o dataframe no Big Query.
 - query.ipynb: arquivo de Jupyter Notebook que responde às perguntas realizadas no fim do desafio proposto.
 
