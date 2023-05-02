@@ -16,21 +16,8 @@ Instale as dependências necessárias com o seguinte comando: pip install -r req
 ## Estrutura do projeto
 O projeto é composto pelas seguintes pastas e arquivos:
 
-karhub_project/
-├── venv/
-├── source/
-│   ├── karhub_autoparts_1.xlsx
-│   └── Karhub-alias.csv
-├── functions/
-│   ├── bigquery.py
-│   ├── connect_api.py
-|   ├── df_alias.py
-|   ├── df_produtos.py
-|   ├── df_veiculos.py
-├── requirements.txt
-├── README.md
-├── df_final.ipynb
-└── query.ipynb
+![image](https://user-images.githubusercontent.com/25641100/235674612-593e3f70-3be1-4c58-9ea2-4c2819320a8b.png)
+
 
 - venv: ambiente virtual Python criado para armazenar os recursos de biblioteca para facilitar o funcionamento do projeto.
 - source: pasta na qual se encontram os arquivos csv e xlsx que serão consumidos, além das credenciais de acesso ao Big Query que não serão incluídas no GitHub para proteger os dados.
